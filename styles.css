@@ -1,158 +1,20 @@
-/* charity: water Brand Colors & Fonts
-
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
-*/
-
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
-
-/* Set up the main font and background color for the whole page */
-body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #222;
-}
-
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
-}
-
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
-}
-
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
-}
-
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
-}
-
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
-}
-
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
-}
-
-/* 
+/*
   Media Queries for Responsive Design
   Media queries help make your website look good on different screen sizes,
   like phones (small screens) and computers (large screens).
 */
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
+/* This media query applies styles when the screen is 700px wide or less (like on most phones) */
+@media (max-width: 700px) {
   /* Make hero section padding smaller on small screens */
   .hero {
-    padding: 32px 8px;
+    padding: 40px 8px;
     font-size: 1em;
   }
 
   /* Make headline font size smaller so it fits on small screens */
   .hero h1 {
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
 
   /* Make subheadline font size smaller */
@@ -162,31 +24,32 @@ section {
 
   /* Make story and call-to-action sections have less padding */
   .story,
-  .call-to-action,
-  .donation-section {
+  .call-to-action {
     padding: 14px 8px;
   }
 
   /* Make impact story image smaller and stack above the text */
   .impact-content {
-    display: block; /* Stack items vertically */
+    flex-direction: column;
     text-align: center;
   }
 
   .impact-image {
     width: 90%;    /* Make image take up most of the width */
     max-width: 220px;
+    margin-right: 0;
+    margin-bottom: 16px;
   }
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
+/* This media query applies styles when the screen is wider than 700px (like on tablets and computers) */
+@media (min-width: 701px) {
   /* Show image and text side by side in the impact story */
   .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
     text-align: left;
     max-width: 800px;
     margin: 0 auto;
@@ -194,5 +57,211 @@ section {
 
   .impact-image {
     width: 300px;
+    margin-bottom: 0;
+    margin-right: 24px;
   }
+}
+/* Impact Story Section Styles */
+.impact-story {
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(119, 171, 187, 0.07);
+  margin: 24px 10px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+/* Layout for image and text in the impact story */
+.impact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Style the impact image */
+.impact-image {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(119, 171, 187, 0.10);
+}
+
+@media (min-width: 700px) {
+  .impact-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+  .impact-image {
+    margin-bottom: 0;
+    margin-right: 24px;
+  }
+}
+
+/* Make the donate button extra bold and clear */
+.donate-button {
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(119, 171, 187, 0.10);
+}
+/*
+  This CSS uses your brand colors and fonts that feel clean, warm, and quietly confident.
+  Color Palette:
+  - Blue: #77ABBB
+  - Cream: #FFF7E1
+  - Gray: #CBCCD1
+  Fonts: 'Segoe UI', 'Verdana', Arial, sans-serif (clean and warm)
+*/
+
+/* Set up the main font and background color for the whole page */
+body {
+  background-color: #FFF7E1; /* Cream background for warmth */
+  font-family: 'Segoe UI', 'Verdana', Arial, sans-serif; /* Clean, warm font */
+  margin: 0;
+  padding: 0;
+  color: #222;
+
+
+/* Add a white background and some space to each section */
+
+
+/* Add a white background and some space to each section */
+section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(119, 171, 187, 0.07); /* Soft blue shadow */
+  margin: 24px 10px;
+  padding: 24px 16px;
+}
+
+/* Hero Section Styles */
+/* Hero Section Styles */
+/*
+  Hero Section with a full-width background image, centered headline, and subheadline.
+  The background image covers the section and grabs attention.
+*/
+.hero {
+  background-image: url('img/JS_20170803_1617.jpg'); /* Local hero image */
+  background-size: cover;      /* Crop image to fill the area */
+  background-position: center; /* Center the image for best fit */
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;          /* More space for a bold look */
+  border-radius: 0 0 16px 16px;
+  position: relative;
+}
+
+/* Add a blue overlay for better text readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(119, 171, 187, 0.7); /* Brand blue with transparency */
+  border-radius: 0 0 16px 16px;
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2;
+}
+}
+
+/* Main headline in hero section */
+.hero h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Subheadline in hero section */
+.hero p {
+  font-size: 1.2em;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+/* Story Section Styles */
+/* Story Section Styles */
+.story {
+  background-color: #CBCCD1; /* Brand Gray */
+  color: #222;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Section headings */
+h2 {
+  color: #77ABBB; /* Brand Blue */
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Make all black captions use #1A1A1A for consistency */
+h1.black,
+h2.black,
+h3.black,
+h4.black,
+h5.black,
+h6.black,
+p.black,
+label.black,
+caption.black,
+.caption,
+.black-caption {
+  color: #1A1A1A !important;
+}
+
+/* Call-to-Action Section Styles */
+/* Call-to-Action Section Styles */
+.call-to-action {
+  background-color: #77ABBB; /* Brand Blue for CTA */
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 12px;
+}
+
+/* Make sure the heading in the call-to-action section is white and stands out */
+.call-to-action h2 {
+  color: #fff;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+
+/* Donate Button Styles */
+.donate-button {
+  display: inline-block;
+  background-color: #CBCCD1; /* Brand Gray */
+  color: #222;
+  padding: 14px 32px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-top: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Change button color when hovered */
+.donate-button:hover {
+  background-color: #77ABBB; /* Blue on hover */
+  color: #fff;
 }
